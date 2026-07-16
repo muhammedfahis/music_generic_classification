@@ -4,6 +4,7 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/
 data/processed/
-models/checkpoints/
+models/checkpoints/*
+!models/checkpoints/custom_cnn_best.keras
 .DS_Store
 .claude/

@@ -30,8 +30,9 @@ visit). Upload a WAV/MP3/OGG/FLAC clip and it predicts the genre.
 venv/bin/pip install -r requirements.txt
 ```
 
-`requirements.txt` is pinned for Apple Silicon (`tensorflow-macos` +
-`tensorflow-metal`). On Linux/Windows, swap those two lines for `tensorflow`.
+`requirements.txt` uses plain `tensorflow` (CPU, cross-platform). On Apple
+Silicon you can optionally also `pip install tensorflow-metal` for local
+GPU acceleration — not needed for correctness, just speed.
 
 Get the GTZAN dataset (10 genres × 100 clips) into `data/raw/genres/<genre>/*.wav`.
 Kaggle requires an API key; this project instead used the
@@ -67,3 +68,19 @@ venv/bin/streamlit run app/streamlit_app.py           # launch the demo app
 
 Results, confusion matrices, and training curves land in `reports/figures/`
 and `reports/*_metrics.json`; the write-up is in `reports/final_report/`.
+
+## Deployment (Streamlit Community Cloud)
+
+The repo is set up to deploy directly:
+
+- `models/checkpoints/custom_cnn_best.keras` (4.9MB) is committed to git —
+  this is the model the app actually uses. `vgg16_transfer_best.keras`
+  (117MB) stays gitignored (over GitHub's 100MB file limit) and isn't
+  required for the app to run; if absent, the app just uses the baseline.
+- `requirements.txt` — Python dependencies (cross-platform).
+- `packages.txt` — system packages (`ffmpeg`, `libsndfile1`) for audio
+  decoding on the deploy target.
+
+To deploy: go to [share.streamlit.io](https://share.streamlit.io), sign in
+with GitHub, "New app", pick this repo/branch, set the main file path to
+`app/streamlit_app.py`, and deploy.

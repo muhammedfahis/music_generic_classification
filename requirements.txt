@@ -1,7 +1,7 @@
-# macOS Apple Silicon (M1/M2/M3) — use tensorflow-macos + tensorflow-metal.
-# On Linux/Windows, replace the two tensorflow-* lines below with: tensorflow>=2.15
-tensorflow-macos==2.16.2
-tensorflow-metal==1.2.0
+# Cross-platform (Linux deploy targets + macOS/Windows dev). Runs on CPU
+# everywhere. On Apple Silicon, optionally add tensorflow-metal==1.2.0
+# for local GPU acceleration (not needed/used in cloud deployment).
+tensorflow==2.16.2
 librosa==0.11.0
 opencv-python-headless==5.0.0.93
 numpy==1.26.4
