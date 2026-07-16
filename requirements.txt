@@ -1,0 +1,14 @@
+# macOS Apple Silicon (M1/M2/M3) — use tensorflow-macos + tensorflow-metal.
+# On Linux/Windows, replace the two tensorflow-* lines below with: tensorflow>=2.15
+tensorflow-macos==2.16.2
+tensorflow-metal==1.2.0
+librosa==0.11.0
+opencv-python-headless==5.0.0.93
+numpy==1.26.4
+pandas
+matplotlib
+seaborn
+scikit-learn
+soundfile
+streamlit
+jupyter

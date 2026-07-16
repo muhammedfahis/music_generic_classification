@@ -1,0 +1,9 @@
+{
+  "model": "custom_cnn",
+  "split": "test",
+  "n_examples": 1500,
+  "accuracy": 0.764,
+  "precision_macro": 0.7794848439593316,
+  "recall_macro": 0.7639999999999999,
+  "f1_macro": 0.7494794981450731
+}
