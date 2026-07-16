@@ -18,7 +18,7 @@ relative to that date (per the proposal's 12-week plan).
 | 4. Transfer Learning (VGG16/ResNet50) | 8–9 | Done | 2026-07-16 | Test accuracy 71.07%; fine-tuning cut short (time) |
 | 5. Model Evaluation | 10 | Done | 2026-07-16 | Baseline CNN selected as final model |
 | 6. Streamlit Web App | 11 | Done | 2026-07-16 | Inference path + server boot verified |
-| 7. Testing, Bug Fixes, Final Report | 12 | In Progress | 2026-07-16 | Report written; final repo cleanup pass still open |
+| 7. Testing, Bug Fixes, Final Report | 12 | Done | 2026-07-16 | Combined report + PDF; git repo initialized; repo cleaned up |
 
 ---
 
@@ -74,8 +74,9 @@ relative to that date (per the proposal's 12-week plan).
 - [x] Test app with a fresh held-out audio clip (see above) — a true browser UI click-through wasn't run (no interactive browser session in this environment) but the full inference pipeline the UI calls was exercised directly
 - [x] Fix edge cases found during testing — fixed a Keras 3 model-loading bug (`Lambda` layer deserialization) discovered while evaluating the transfer model; see Phase 4 note
 - [x] Write final report (methodology, results, literature review) → `reports/final_report/{methodology,results,literature_review}.md`
+- [x] Combine into one submittable document with intro/conclusion → `reports/final_report/Final_Report.md` + `Final_Report.pdf` (12 pages, generated via pandoc + typst, figures embedded)
 - [x] Add `README.md` with setup/run instructions
-- [ ] Final repo cleanup
+- [x] Final repo cleanup — removed `__pycache__`, removed empty `notebooks/` scaffold dir, initialized git repo (`.gitignore` covers `venv/`, `data/raw`, `data/processed`, `models/checkpoints`, `.claude/`), initial commit made (35 files)
 
 ---
 
@@ -84,4 +85,4 @@ relative to that date (per the proposal's 12-week plan).
 - [x] Comparative evaluation: custom CNN vs. Transfer Learning (VGG16/ResNet50) — `reports/final_report/results.md`
 - [x] Mel-Spectrogram visualization pipeline (Librosa) — `src/preprocessing/spectrogram.py`, `eda.py`
 - [x] Streamlit web app for genre prediction — `app/streamlit_app.py`, inference path verified
-- [x] Final project report — `reports/final_report/{literature_review,methodology,results}.md` (a short intro/conclusion + PDF export is the only remaining polish item)
+- [x] Final project report — `reports/final_report/Final_Report.pdf` (combined, with intro/conclusion, 12 pages)
